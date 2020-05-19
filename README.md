@@ -20,9 +20,10 @@ The project revolves around:
 3. Accessing the Watson Discovery Service through the Discovery API 
  
 Additionally, we include:
-1 Deploy the app on IBM Cloud.
-2. Use a Slack interface to query the data  
-3. Push news alerts out to web notification
+1.	Deploy the app on IBM Cloud.
+2.	Use a Slack interface to query the data  
+3.	Push news alerts out to web notification
+
 We propose the use of IBM Discovery, IBM Watson and IBM Node-RED.
 
 
