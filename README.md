@@ -1,11 +1,15 @@
 llSPS-INT-145-AI-Powered-News-Search-App-Level-1-
+
 AI Powered News Search App (Level-1)
 
 Website:  https://node-red-izkrz.eu-gb.mybluemix.net/ui/
+
 Video Presentation: https://drive.google.com/file/d/1BtW3VOI4pzPyGHWtHnK_gwrsZDPOfxj_/view
+
 Feedback Video: https://drive.google.com/file/d/1LsLh7rvNtJeXd5GTjVfL3eTD-J4Hh-ch/view
 
 AI Powered News Search App using IBM Cloud Services
+
 
 The web is home to massive amounts of data, with more being created every day. Organizations can harness this constant stream of information to gain understanding, plan strategies, and find opportunities. Enriched news data can help your application make dynamic connections across current events faster.
 In this project, we built a NEWS mining web application starting with the basics, using Node-RED / Python Web App and the IBM Watson Discovery Service.
