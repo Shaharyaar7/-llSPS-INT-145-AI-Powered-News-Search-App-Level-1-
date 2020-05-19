@@ -78,13 +78,14 @@ CONCLUSION
 This application uses individual out-of-the-box UI components to extract and visualize the enriched data provided by the Discovery analytics engine. The web application includes Sentiment analysis, slack integration and embedded using Node-Red. 
 
 FUTURE SCOPE
-1.	The future scope may include:
-2.	Variations in phrasing:
-3.	News search using audio and converting that using speech-to-text.
-4.	Tracking conversations:
-5.	Adding language translator with audio to enable search and results in regional language.
-6.	Usage monitoring:
-7.	Improving result relevance with the tooling:
+
+The future scope may include:
+
+1.	Variations in phrasing:
+2.	News search using audio and converting that using speech-to-text.
+3.	Tracking conversations:
+4.	Adding language translator with audio to enable search and results in regional language.
+
 
 RESULT
 The final application has 
