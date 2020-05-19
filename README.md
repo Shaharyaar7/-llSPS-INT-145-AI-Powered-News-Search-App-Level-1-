@@ -53,15 +53,22 @@ Advantages:
 Disadvantages:Application Programming Interface (API) 
 1.	One of the key problems that most of the developer’s encounter is the Application Programming Interface (API) keeps on changing at frequent intervals and does not remain stable.
 2.	At times, a new API appears having a number of backwards-incompatible changes. As a result, the developers are forced to make changes in the accessible code bases to match the compatibility with the latest version of the Node.js API.
+
 Sentiment Analysis:
+
 1.	Sentiment analysis tools can identify and analyze many pieces of text automatically and quickly.
 2.	But computer programs have problems recognizing things like sarcasm and irony, negations, jokes, and exaggerations.
 
 APPLICATIONS
-11.	A full-fledged software or website with real-time applications
+
+1.	A full-fledged software or website with real-time applications
+
 2.	Can be used as an everyday-app to browse and get news real-time, anytime in the day
+
 3.	Sentiment analysis on the news articles and different types of data.
+
 4.	Getting news articles fast and reliable with score and other metadata information’s.
+
 
 
 CONCLUSION
