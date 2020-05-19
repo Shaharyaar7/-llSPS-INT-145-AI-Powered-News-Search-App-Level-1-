@@ -1,0 +1,577 @@
+[
+    {
+        "id": "8522401.ff813c",
+        "type": "tab",
+        "label": "Flow 2",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "54ee22e6.be9d8c",
+        "type": "ui_form",
+        "z": "8522401.ff813c",
+        "name": "",
+        "label": "",
+        "group": "dd4ec0bb.0d939",
+        "order": 3,
+        "width": "14",
+        "height": "4",
+        "options": [
+            {
+                "label": "Enter the input",
+                "value": "Input",
+                "type": "text",
+                "required": true,
+                "rows": null
+            }
+        ],
+        "formValue": {
+            "Input": ""
+        },
+        "payload": "",
+        "submit": "submit",
+        "cancel": "cancel",
+        "topic": "",
+        "x": 100,
+        "y": 300,
+        "wires": [
+            [
+                "e7e0b309.b3847"
+            ]
+        ]
+    },
+    {
+        "id": "e7e0b309.b3847",
+        "type": "function",
+        "z": "8522401.ff813c",
+        "name": "",
+        "func": "msg={\n    discoveryparams:\n{\n    \"environment_id\":\"system\",\n    \"query\":msg.payload.Input\n}\n}\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 245,
+        "y": 320,
+        "wires": [
+            [
+                "5fdc6f20.9f714"
+            ]
+        ]
+    },
+    {
+        "id": "5fdc6f20.9f714",
+        "type": "watson-discovery-v1",
+        "z": "8522401.ff813c",
+        "name": "discovery",
+        "environmentname": "",
+        "environmentId": "system",
+        "collectionId": "news-en",
+        "configurationname": "",
+        "configurationId": "",
+        "language_code": "en",
+        "collection_name": "",
+        "count": "1",
+        "passages": true,
+        "nlp_query": true,
+        "query": "",
+        "filter": "",
+        "aggregation": "",
+        "return": "",
+        "description": "",
+        "size": "LT",
+        "discovery-method": "query",
+        "service-endpoint": "https://api.eu-gb.discovery.watson.cloud.ibm.com/instances/260463e6-9432-44ba-80e0-ef1a24051890",
+        "x": 380,
+        "y": 280,
+        "wires": [
+            [
+                "42104dc3.99cbc4",
+                "fc28bd4f.aa882",
+                "a132def6.859ab",
+                "ff28ef44.661bc",
+                "b119a7de.565908",
+                "b5eeabf8.099a08",
+                "4f27e62c.2a0b08",
+                "7df2a091.dcc7d"
+            ]
+        ]
+    },
+    {
+        "id": "42104dc3.99cbc4",
+        "type": "debug",
+        "z": "8522401.ff813c",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "payload",
+        "targetType": "msg",
+        "x": 320,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "774faadb.7d0a24",
+        "type": "debug",
+        "z": "8522401.ff813c",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 410,
+        "y": 420,
+        "wires": []
+    },
+    {
+        "id": "7df2a091.dcc7d",
+        "type": "function",
+        "z": "8522401.ff813c",
+        "name": "text",
+        "func": "msg.payload=msg.search_results.results[0].text\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 560,
+        "y": 40,
+        "wires": [
+            [
+                "98ee8d88.a789e",
+                "35e328df.3f4358",
+                "4f27e62c.2a0b08"
+            ]
+        ]
+    },
+    {
+        "id": "fc28bd4f.aa882",
+        "type": "function",
+        "z": "8522401.ff813c",
+        "name": "author",
+        "func": "msg.payload=msg.search_results.results[0].author\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 560,
+        "y": 120,
+        "wires": [
+            [
+                "b022b95d.b5aa78"
+            ]
+        ]
+    },
+    {
+        "id": "a132def6.859ab",
+        "type": "function",
+        "z": "8522401.ff813c",
+        "name": "main page url",
+        "func": "msg.payload=msg.search_results.results[0].main_image_url\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 590,
+        "y": 180,
+        "wires": [
+            [
+                "1f8d1dd8.b11bc2"
+            ]
+        ]
+    },
+    {
+        "id": "ff28ef44.661bc",
+        "type": "function",
+        "z": "8522401.ff813c",
+        "name": "url",
+        "func": "msg.payload=msg.search_results.results[0].url\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 560,
+        "y": 220,
+        "wires": [
+            [
+                "64ac5c7f.6920c4"
+            ]
+        ]
+    },
+    {
+        "id": "b119a7de.565908",
+        "type": "function",
+        "z": "8522401.ff813c",
+        "name": "score",
+        "func": "msg.payload=msg.search_results.results[0].enriched_text.sentiment.document.score\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 560,
+        "y": 280,
+        "wires": [
+            [
+                "ccd44d70.1d8e4",
+                "ef5e1413.8fe598"
+            ]
+        ]
+    },
+    {
+        "id": "b5eeabf8.099a08",
+        "type": "function",
+        "z": "8522401.ff813c",
+        "name": "label",
+        "func": "msg.payload=msg.search_results.results[0].enriched_text.sentiment.document.label\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 570,
+        "y": 360,
+        "wires": [
+            [
+                "3f925a55.2b7016"
+            ]
+        ]
+    },
+    {
+        "id": "4f27e62c.2a0b08",
+        "type": "sentiment",
+        "z": "8522401.ff813c",
+        "name": "",
+        "property": "payload",
+        "x": 240,
+        "y": 500,
+        "wires": [
+            [
+                "774faadb.7d0a24",
+                "e6fcdb1.89e9e28",
+                "4874c1be.f5e2d",
+                "7ab47479.e4025c"
+            ]
+        ]
+    },
+    {
+        "id": "e6fcdb1.89e9e28",
+        "type": "function",
+        "z": "8522401.ff813c",
+        "name": "sentiment",
+        "func": "msg.payload=msg.sentiment.score;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 582,
+        "y": 440,
+        "wires": [
+            [
+                "5e8632ce.796eec"
+            ]
+        ]
+    },
+    {
+        "id": "4874c1be.f5e2d",
+        "type": "function",
+        "z": "8522401.ff813c",
+        "name": "positive",
+        "func": "msg.payload=msg.sentiment.positive.length;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 580,
+        "y": 500,
+        "wires": [
+            [
+                "47837ed5.d7609"
+            ]
+        ]
+    },
+    {
+        "id": "7ab47479.e4025c",
+        "type": "function",
+        "z": "8522401.ff813c",
+        "name": "negative",
+        "func": "msg.payload=msg.sentiment.negative.length;\nreturn msg;",
+        "outputs": 1,
+        "noerr": 0,
+        "x": 580,
+        "y": 560,
+        "wires": [
+            [
+                "7e2e056f.6b062c"
+            ]
+        ]
+    },
+    {
+        "id": "5e8632ce.796eec",
+        "type": "ui_chart",
+        "z": "8522401.ff813c",
+        "name": "",
+        "group": "dd4ec0bb.0d939",
+        "order": 11,
+        "width": "3",
+        "height": "5",
+        "label": "sentiment score",
+        "chartType": "bar",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": true,
+        "useUTC": false,
+        "colors": [
+            "#ff0000",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 780,
+        "y": 440,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "47837ed5.d7609",
+        "type": "ui_chart",
+        "z": "8522401.ff813c",
+        "name": "",
+        "group": "dd4ec0bb.0d939",
+        "order": 12,
+        "width": "3",
+        "height": "5",
+        "label": "positive chart",
+        "chartType": "bar",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": true,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 770,
+        "y": 500,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "7e2e056f.6b062c",
+        "type": "ui_chart",
+        "z": "8522401.ff813c",
+        "name": "",
+        "group": "dd4ec0bb.0d939",
+        "order": 13,
+        "width": "3",
+        "height": "5",
+        "label": "negative chart",
+        "chartType": "bar",
+        "legend": "false",
+        "xformat": "HH:mm:ss",
+        "interpolate": "linear",
+        "nodata": "",
+        "dot": false,
+        "ymin": "",
+        "ymax": "",
+        "removeOlder": 1,
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "cutout": 0,
+        "useOneColor": true,
+        "useUTC": false,
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "useOldStyle": false,
+        "outputs": 1,
+        "x": 780,
+        "y": 560,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "98ee8d88.a789e",
+        "type": "ui_text",
+        "z": "8522401.ff813c",
+        "group": "dd4ec0bb.0d939",
+        "order": 4,
+        "width": "14",
+        "height": "2",
+        "name": "",
+        "label": "search result",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 740,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "b022b95d.b5aa78",
+        "type": "ui_text",
+        "z": "8522401.ff813c",
+        "group": "dd4ec0bb.0d939",
+        "order": 5,
+        "width": "14",
+        "height": "2",
+        "name": "",
+        "label": "author",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 730,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "1f8d1dd8.b11bc2",
+        "type": "ui_text",
+        "z": "8522401.ff813c",
+        "group": "dd4ec0bb.0d939",
+        "order": 6,
+        "width": "14",
+        "height": "2",
+        "name": "",
+        "label": "main page url",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 780,
+        "y": 180,
+        "wires": []
+    },
+    {
+        "id": "64ac5c7f.6920c4",
+        "type": "ui_text",
+        "z": "8522401.ff813c",
+        "group": "dd4ec0bb.0d939",
+        "order": 7,
+        "width": "14",
+        "height": "2",
+        "name": "",
+        "label": "url",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 730,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "ccd44d70.1d8e4",
+        "type": "ui_text",
+        "z": "8522401.ff813c",
+        "group": "dd4ec0bb.0d939",
+        "order": 8,
+        "width": "14",
+        "height": "2",
+        "name": "",
+        "label": "score",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 730,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "3f925a55.2b7016",
+        "type": "ui_text",
+        "z": "8522401.ff813c",
+        "group": "dd4ec0bb.0d939",
+        "order": 10,
+        "width": "14",
+        "height": "2",
+        "name": "",
+        "label": "label",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 730,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "ef5e1413.8fe598",
+        "type": "ui_gauge",
+        "z": "8522401.ff813c",
+        "name": "",
+        "group": "dd4ec0bb.0d939",
+        "order": 9,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "sentiment score",
+        "label": "units",
+        "format": "{{value}}",
+        "min": "-2",
+        "max": "2",
+        "colors": [
+            "#00b500",
+            "#ffff00",
+            "#ff0000"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 890,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "35e328df.3f4358",
+        "type": "debug",
+        "z": "8522401.ff813c",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "x": 860,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "dd4ec0bb.0d939",
+        "type": "ui_group",
+        "z": "",
+        "name": "IBM",
+        "tab": "368ea61e.342a8a",
+        "order": 1,
+        "disp": true,
+        "width": "14",
+        "collapse": false
+    },
+    {
+        "id": "368ea61e.342a8a",
+        "type": "ui_tab",
+        "z": "",
+        "name": "IBM",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    }
+]
