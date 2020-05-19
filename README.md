@@ -40,12 +40,15 @@ Discovery:
 Advantages and Disadvantages:
 
 The following advantages and disadvantages are observed.
-    Advantages:
-    •	The app uses standard search UI components such as filter lists, tag clouds, and sentiment graphs, but also more complex Discovery options such as the passages and highlight features.
-    •	With these two features, the app identifies the most relevant snippets in your data based on your query and is more likely to return the data that you’re searching for.
-    •	News coming with sentiment analysis done and only singular commands are needed for slack to get the requested news.
-    •	The main benefit of using the Watson Discovery Service is its powerful analytics engine that provides cognitive enrichments and insights into our data. The app in this code pattern provides examples of how to showcase these enrichments through the use of filters, lists, and graphs.
-    •	The project makes use of slack that has multiple APIs to create bots and to create a connection to Slack. Any request to the bot user, to the bot directly, or from a Slack channel in which the bot is a member, is sent to the server that starts the connection. Slack uses the bot token as a means to authenticate and all of these works due to the use of the Real Time Messaging API
+
+Advantages:
+
+1.	The app uses standard search UI components such as filter lists, tag clouds, and sentiment graphs, but also more complex Discovery options such as the passages and highlight features.
+2.	With these two features, the app identifies the most relevant snippets in your data based on your query and is more likely to return the data that you’re searching for.
+3.	News coming with sentiment analysis done and only singular commands are needed for slack to get the requested news.
+4.	The main benefit of using the Watson Discovery Service is its powerful analytics engine that provides cognitive enrichments and insights into our data. The app in this code pattern provides examples of how to showcase these enrichments through the use of filters, lists, and graphs.
+5.	The project makes use of slack that has multiple APIs to create bots and to create a connection to Slack. Any request to the bot user, to the bot directly, or from a Slack channel in which the bot is a member, is sent to the server that starts the connection. Slack uses the bot token as a means to authenticate and all of these works due to the use of the Real Time Messaging API
+
 Disadvantages:
     Application Programming Interface (API) 
     a.	One of the key problems that most of the developer’s encounter is the Application Programming Interface (API) keeps on changing at frequent intervals and does not remain stable.
