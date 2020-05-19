@@ -56,13 +56,18 @@ Disadvantages:Application Programming Interface (API)
 Sentiment Analysis:
 1.	Sentiment analysis tools can identify and analyze many pieces of text automatically and quickly.
 2.	But computer programs have problems recognizing things like sarcasm and irony, negations, jokes, and exaggerations.
+
 APPLICATIONS
-1.	A full-fledged software or website with real-time applications
+11.	A full-fledged software or website with real-time applications
 2.	Can be used as an everyday-app to browse and get news real-time, anytime in the day
 3.	Sentiment analysis on the news articles and different types of data.
 4.	Getting news articles fast and reliable with score and other metadata information’s.
+
+
 CONCLUSION
+
 This application uses individual out-of-the-box UI components to extract and visualize the enriched data provided by the Discovery analytics engine. The web application includes Sentiment analysis, slack integration and embedded using Node-Red. 
+
 FUTURE SCOPE
 1.	The future scope may include:
 2.	Variations in phrasing:
