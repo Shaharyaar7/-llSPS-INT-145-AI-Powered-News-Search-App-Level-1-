@@ -50,7 +50,9 @@ Advantages:
 4.	The main benefit of using the Watson Discovery Service is its powerful analytics engine that provides cognitive enrichments and insights into our data. The app in this code pattern provides examples of how to showcase these enrichments through the use of filters, lists, and graphs.
 5.	The project makes use of slack that has multiple APIs to create bots and to create a connection to Slack. Any request to the bot user, to the bot directly, or from a Slack channel in which the bot is a member, is sent to the server that starts the connection. Slack uses the bot token as a means to authenticate and all of these works due to the use of the Real Time Messaging API
 
-Disadvantages:Application Programming Interface (API) 
+Disadvantages:
+
+Application Programming Interface (API) 
 1.	One of the key problems that most of the developer’s encounter is the Application Programming Interface (API) keeps on changing at frequent intervals and does not remain stable.
 2.	At times, a new API appears having a number of backwards-incompatible changes. As a result, the developers are forced to make changes in the accessible code bases to match the compatibility with the latest version of the Node.js API.
 
